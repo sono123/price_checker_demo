@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title><%= full_title(yield(:title)) %></title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <meta name="viewport" content="width=device-width, user-scalable=no">
+	  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+	  <%= csrf_meta_tags %>
+	  <%= render 'layouts/shim' %>
+	</head>
+	<body ng-app="bcApp">
+		<div class="main-container">
+			<%= render 'layouts/header' %>
+			<div class="container">
+				<div class="page-content col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+
+					<% unless flash[:error_redirect] == true %>
+						<% flash.each do |message_type, message| %>
+							<% if message.class == Hash %>
+								<div class="text-center business-card-errors">
+						    	<ul>
+							      <% message.each do |type, msg| %>
+							        <li>Please include the <%= type %>!</li>
+							      <% end %>
+						      </ul>
+						    </div>
+						    <% next %>
+							<% end %>
+							<div class="text-center alert alert-<%= message_type %>"><%= message %></div>
+						<% end %>
+						<div class="select-error text-center"></div>
+					<%end %>
+
+					<%= yield %>
+
+				</div>
+			</div>
+		</div>
+			<!-- <div class="push"></div> -->
+			<%= render 'layouts/footer' %>
+	</body>
+	</div>
+</html>
+

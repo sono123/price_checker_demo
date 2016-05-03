@@ -1,0 +1,14 @@
+<h1 class="main-header">Listing Quantities</h1>
+
+<table class="table index-tables">
+  <tbody>
+    <% @quantities.each do |quantity| %>
+      <tr>
+        <td><%= quantity.quantity %></td>
+        <td class="text-right"><%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_quantity_path(quantity) %><span class="space"></span><%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, quantity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= button_to 'New Quantity', new_quantity_path, method: :get, class: "btn-style" %>

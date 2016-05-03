@@ -1,0 +1,21 @@
+<% provide(:title, 'Pending Activations') %>
+
+<h1 class="pending-header">Pending Activations</h1>
+
+
+<% if @pending_activations.count == 0 %>
+
+	<h3 class="center">There are no pending user activations</h3>
+	
+<% else %>
+
+	<ul class="users">
+		<% @pending_activations.each do |user| %>
+			<%= render partial: 'pending_activations/pending_users', locals: { user: user } %>
+		<% end %>
+	</ul>
+	
+	<%= will_paginate %>
+
+<% end %>
+

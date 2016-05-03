@@ -1,0 +1,20 @@
+<%= form_for @box_count, html: { class: "new-resource-form" } do |f| %>
+
+	<% if @box_count.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @box_count.errors.messages.each do |message| %>
+        <li><%= message[1][0] %>!</li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group new-form-group">
+    <%= f.label :box_count, class: "capitalize" %>
+    <%= f.text_field :box_count, class: "new-bc-text-field edit-bc-price form-control new-form-control" %>
+  </div>
+  <%= f.submit 'Submit', class: "btn small-btn-style" %>
+<% end %>
+
+<%= button_to 'Cancel', box_counts_path, method: :get, class: "btn small-btn-style cancel" %>

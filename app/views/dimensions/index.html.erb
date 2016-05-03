@@ -1,0 +1,14 @@
+<h1 class="main-header">Listing Dimensions</h1>
+
+<table class="table index-tables">
+  <tbody>
+    <% @dimensions.each do |dimension| %>
+      <tr>
+        <td><%= trim(dimension.width) %> x <%= trim(dimension.height) %></td>
+        <td class="text-right"><span><%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_dimension_path(dimension) %><span class="space"></span><%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, dimension, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= button_to 'New Dimension', new_dimension_path, method: :get, class: "btn-style" %>

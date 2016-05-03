@@ -1,0 +1,24 @@
+<%= form_for @dimension, html: { class: "new-resource-form" } do |f| %>
+
+	<% if @dimension.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @dimension.errors.messages.each do |message| %>
+        <li><%= message[1][0] %>!</li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group new-form-group">
+    <%= f.label :width %>
+    <%= f.text_field :width, class: "new-bc-text-field edit-bc-price form-control new-form-control" %>
+  </div>
+  <div class="field form-group new-form-group">
+    <%= f.label :height %>
+    <%= f.text_field :height, class: "new-bc-text-field edit-bc-price form-control new-form-control" %>
+  </div>
+  <%= f.submit 'Submit', class: "btn small-btn-style" %>
+<% end %>
+
+<%= button_to 'Cancel', dimensions_path, method: :get, class: "btn small-btn-style cancel" %>

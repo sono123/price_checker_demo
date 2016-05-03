@@ -1,0 +1,32 @@
+<%= form_for(@paper_type) do |f| %>
+
+  <% if @paper_type.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @paper_type.errors.messages.each do |message| %>
+        <li><%= message[1][0] %>!</li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field hidden">
+    <%= f.label :brand %>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field form-group new-form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "new-bc-text-field edit-bc-price form-control new-form-control" %>
+  </div>
+  <div class="field form-group new-form-group">
+    <%= f.label :color %>
+    <%= f.text_field :color, class: "new-bc-text-field edit-bc-price form-control new-form-control" %>
+  </div>
+  <div class="field form-group new-form-group">
+    <%= f.label :thickness %>
+    <%= f.text_field :thickness, class: "new-bc-text-field edit-bc-price form-control new-form-control" %>
+  </div>
+  <%= f.submit 'Submit', class: "btn small-btn-style" %>
+<% end %>
+
+<%= button_to 'Cancel', paper_types_path, method: :get, class: "btn small-btn-style cancel" %>

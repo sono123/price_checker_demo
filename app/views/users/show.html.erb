@@ -1,0 +1,69 @@
+<% provide(:title, @user.name) %>
+
+<div class="row">
+	<div class="col-1-md center"><%= gravatar_for @user, size: 150, class: "img-circle" %></div>
+</div>
+
+<div class="row">
+	<h1 class="user_name"><%= @user.name %></h1>
+</div>
+
+<div class="row">
+	<div class="col-md-4 stats-circle">
+		<div class="circles center">
+			<p class="stats-titles">Entries</p>
+			<p class="stats-data"><%= @user.business_cards.count %></p>
+		</div>
+	</div>
+
+	<div class="col-md-4 stats-circle stats-circle-middle">
+		<div class="circles center">
+			<p class="stats-titles">Joined</p>
+			<p class="stats-data"><%= @user.created_at.strftime("%_m-%d-%Y") %></p>
+		</div>
+	</div>
+
+	<div class="col-md-4 stats-circle">
+		<div class="circles center">
+			<p class="stats-titles">Admin</p>
+			<p class="stats-data">
+				<% if @user.admin? %>
+					Yes
+				<% else %>
+					No
+				<% end %>
+			</p>
+		</div>
+	</div>
+</div>
+
+<% if @business_cards.count > 0 %>
+	<h1 class="main-header">All Entries</h1>
+	<table class="table index-tables">
+	  <tbody>
+	    <% @business_cards.each do |business_card| %>
+	      <tr>
+	        <td><%= link_to "#{multi_capitalize(business_card.print_method.print_method)} - #{business_card.ink_color.front}/#{business_card.ink_color.back} x #{business_card.box_count.box_count}", edit_business_card_path(business_card) %><span class="space"></td>
+	        <td class="text-right"><span><%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_business_card_path(business_card) %><span class="space"></span>
+	        	<% if current_user %><%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, business_card, method: :delete, data: { confirm: 'Are you sure?' } if current_user.admin? %></span>
+		        <% end %>
+		      </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+	<div class="center"><%= will_paginate @business_cards %></div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
