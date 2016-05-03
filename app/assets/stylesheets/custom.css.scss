@@ -161,6 +161,7 @@ p {
 	height: auto;
 	margin-bottom: 50px;
 	padding: 30px 20px;
+	display: none;
 }
 
 .how-to-use p {
@@ -177,12 +178,20 @@ p {
 	color: red;
 }
 
+.how-to-use-header {
+	color: #3277b3;
+	font-weight: bold;
+	margin-bottom: 45px;
+	cursor: pointer;
+	cursor: hand;
+}
+
 .gray {
 	color: $gray-light;
 }
 
-.how-to-use-header {
-	font-weight: bold;
+.light-gray {
+	color: #e6e6e6;
 }
 
 .main-header {

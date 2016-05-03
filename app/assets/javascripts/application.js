@@ -54,8 +54,13 @@ $(document).ready(function() {
 
 	$(".back-button").on( "click", function(event) {
 		event.preventDefault();
-		console.log("reached back"); //get rid of
 	  window.history.back();
+	});
+
+
+	$(".how-to-use-header").on( "click", function() {
+	  $(".how-to-use-header").toggleClass('light-gray');
+	  $(".how-to-use").slideToggle();
 	});
 
 
@@ -112,9 +117,6 @@ $(document).ready(function() {
 			$(".price-cost-error").append("<h4 class='error text-center'>Please enter the Price and Cost.</h4>");
 		};
 	});
-
-	// var replaced = $(".edit-price-table").html().replace(/Cmyk/g,'CMYK');
-	// $(".edit-price-table").html(replaced);
 
 });
 
