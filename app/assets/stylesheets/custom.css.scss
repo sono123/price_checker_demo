@@ -22,6 +22,11 @@ html, body {
   /*background-image: url("background.svg");*/
 }
 
+.smaller {
+	font-size: 14px;
+	line-height: 2em;
+}
+
 .error, .alert-error {
 	color: #ff3300;
 }
@@ -536,6 +541,11 @@ tr:first-child td {
 }
 
 .users-header {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.forgot-header {
 	font-weight: bold;
 	text-transform: uppercase;
 }

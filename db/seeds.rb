@@ -1,10 +1,19 @@
 # USER SEEDS
 
 User.create!(name: "Sample User",
-						 email: "steveono@gmail.com",
+						 email: "stevenwono@gmail.com",
 						 password:              "foobar",
 						 password_confirmation: "foobar",
 						 admin: false, 
+						 activated: true,
+						 activated_at: Time.zone.now)
+
+
+User.create!(name: "Steve Ono",
+						 email: "steveono@gmail.com",
+						 password:              "temporary",
+						 password_confirmation: "temporary",
+						 admin: true, 
 						 activated: true,
 						 activated_at: Time.zone.now)
 
