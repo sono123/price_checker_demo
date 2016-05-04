@@ -157,10 +157,11 @@ p {
 
 .how-to-use {
 	border: 1px solid #e6e6e6;
-	border-radius: 6px;
+	background: rgba(0, 0, 0, 0.015);
+	/*border-radius: 6px;*/
 	height: auto;
 	margin-bottom: 50px;
-	padding: 30px 20px;
+	padding: 35px 20px;
 	display: none;
 }
 
@@ -169,6 +170,7 @@ p {
 }
 
 .how-to-use h4 {
+	color: #224f77;
 	font-weight: bold;
 	font-size: 16px;
 	margin-bottom: 20px;
@@ -187,11 +189,16 @@ p {
 }
 
 .gray {
-	color: $gray-light;
+	color: #cccccc;
 }
 
 .light-gray {
 	color: #e6e6e6;
+}
+
+.indent {
+	margin-left: 10px;
+	margin-bottom: 15px;
 }
 
 .main-header {

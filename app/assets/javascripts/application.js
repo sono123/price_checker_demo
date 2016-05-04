@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 
 	$(".how-to-use-header").on( "click", function() {
-	  $(".how-to-use-header").toggleClass('light-gray');
+	  $(".how-to-use-header").toggleClass('gray');
 	  $(".how-to-use").slideToggle();
 	});
 
