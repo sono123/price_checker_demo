@@ -1,8 +1,75 @@
 <% provide(:title, "About") %>
 
-<h1 class="about-header">About</h1>
+<h1 class="about-header">About This Site</h1>
 
-<p>This web app was designed exclusively as a tool for generating estimates for business cards. This is not a publicly accessible application, meaning no users will be registered unless they are employees of the proprietor's organization.</p>
+<p>This web app was designed as a tool for generating price estimates for printed goods, primarily business cards. Users can enter the specifications for a given product, and in return, receive a fully formatted price estimate that they can forward to any potential customers.</p>
 
-<p>For all qualified users, please <%= link_to "sign up", signup_path %> for the app in order to access its functionality. After signing up, you must wait for your approval from one of our administrators. This may take up to 48 hours. If you have any issues with the registration process, please visit our <%= link_to "help", help_path %> page for more information.</p>
+<p>If a price for a given product does not exist in the system, users can enter the pricing information themselves. As a result, the more the site is used, the more useful it becomes.</p>
+
+<p>Although this demo site is publically accessible, the production verion is only meant for internal use within the proprietor's organization. Some notable features are listed below:</p>
+
+<br>
+
+<h4 class="center"><strong>Secure Registration + Admin Authorization</strong></h4>
+
+<p>Any users that register for this site must be approved by an administrator. Since this website manages sensitive pricing and cost information, only certain people can have access to it.</p>
+
+<%= image_tag("awaiting-approval.png", class: "help-images") %>
+<br>
+
+<%= image_tag("account-not-activated.png", class: "help-images") %>
+<br>
+
+<p>When a user signs up, an admin is alerted to the new signup request. The admin can approve or deny the user. If the admin approves the user, the user will receive a confirmation email with an activation link. In order to complete the registration process, the user must click on the activation link within a hour from the time it was sent. After that time, the activation link expires.</p>
+
+<br>
+
+<h4 class="center"><strong>Similar Products Algorithm</strong></h4>
+
+<p>Easily the most difficult feature to implement on this site, listing similar products is very useful for users who need to enter a new price and cost into the system.</p>
+
+<%= image_tag("similar-products.png", class: "help-images") %>
+<br>
+
+<p>If a user querys the system for a given product and it hasn't yet been entered, they will need to enter the cost and pricing information for future reference. Being able to scroll down and view similar products is very helpful in formulating a price and cost for that particular product.</p>
+
+<br>
+
+<h4 class="center"><strong>Intuitive Client-Side Validations</strong></h4>
+
+<p>This web app utilizes highly intuitive client-side validations to ensure that the minimum requirements for a query are satisfied. Not only does it provide an error message, it also highlights the required fields in red within the search form.</p>
+
+<%= image_tag("client-validations.png", class: "help-images") %>
+<br>
+
+<p>Aside from the client-side vaidations, this web app also has server-side validations to help provide a higher level of reliability. If the javascript validations fail for some reason, the backend validations will catch any invalid submissions.</p>
+
+<br>
+
+<h4 class="center"><strong>Detailed Profile + User Activity</strong></h4>
+
+<p>User profile pages show a count of all entries that were submitted by that particular user. It also shows the date they joined, as well as their admin status.</p>
+
+<%= image_tag("profile.png", class: "help-images") %>
+<br>
+
+<p>In addition to just showing a count of entries submitted by that user, the profile page also show a summary of the entries themselves. This list helps a user locate a record that they entered recently. These entries are displayed in groups of 25 at a time.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
